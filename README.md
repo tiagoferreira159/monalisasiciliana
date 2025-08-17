@@ -1,0 +1,471 @@
+# monalisasiciliana<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monalisa Siciliana | Palestras, Mentoria e Consultoria</title>
+  <meta name="description" content="Executiva com 20+ anos em gestão estratégica, processos e finanças. Palestras impactantes, mentorias executivas e consultoria para empresas que querem crescer com eficiência e lucro." />
+  <meta property="og:title" content="Monalisa Siciliana | Transformando Processos em Lucro" />
+  <meta property="og:description" content="Palestras, mentorias e consultoria empresarial para acelerar resultados com processos, KPIs e controladoria de alta performance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta name="theme-color" content="#f4b400" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0c0d10;          /* fundo escuro elegante */
+      --panel:#12141a;       /* painéis/cards */
+      --text:#e9eef6;        /* texto principal */
+      --muted:#b6c1d6;       /* texto secundário */
+      --accent:#f4b400;      /* amarelo ouro (impacto/executivo) */
+      --accent-2:#5865f2;    /* azul (tech/confiança) */
+      --accent-3:#e63946;    /* vermelho (energia) */
+      --radius:20px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --container: 1200px;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;line-height:1.6}
+    img{max-width:100%;display:block}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    /* Navbar */
+    .nav{position:fixed;inset:0 auto auto 0;height:70px;width:100%;backdrop-filter:saturate(180%) blur(8px);background:rgba(12,13,16,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo{width:40px;height:40px;border-radius:12px;background:conic-gradient(from 180deg at 50% 50%, var(--accent) 0 25%, var(--accent-2) 25% 50%, #3ecf8e 50% 75%, var(--accent-3) 75% 100%);box-shadow:var(--shadow)}
+    .brand h1{font-family:Poppins,Inter,sans-serif;font-size:18px;margin:0;font-weight:800;letter-spacing:.4px;color:#fff}
+    .nav a{color:var(--text);text-decoration:none}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{font-weight:600;opacity:.9}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:none;border-radius:999px;padding:12px 18px;font-weight:700;cursor:pointer;transition:.2s all}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#ffd166);color:#1a1a1a}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(244,180,0,.35)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff}
+
+    /* Mobile menu */
+    .hamb{display:none;background:none;border:none}
+    .hamb span{display:block;width:24px;height:2px;background:#fff;margin:5px 0}
+    @media (max-width:1024px){
+      .menu{display:none;position:absolute;top:70px;left:0;right:0;background:rgba(12,13,16,.98);border-bottom:1px solid rgba(255,255,255,.06);flex-direction:column;padding:14px 20px}
+      .menu.open{display:flex}
+      .hamb{display:block}
+    }
+
+    /* Hero */
+    .hero{padding-top:120px;padding-bottom:80px;background:radial-gradient(1200px 500px at 80% -10%, rgba(244,180,0,.18), transparent 70%), radial-gradient(1200px 600px at -10% 10%, rgba(88,101,242,.18), transparent 65%)}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;font-weight:700;color:#111;background:linear-gradient(135deg,var(--accent),#ffe9a6);padding:8px 14px;border-radius:999px;letter-spacing:.2px}
+    .title{font-family:Poppins,Inter,sans-serif;font-size:48px;line-height:1.1;margin:16px 0 14px}
+    .subtitle{font-size:18px;color:var(--muted);max-width:60ch}
+    .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .stat{background:var(--panel);border-radius:16px;padding:16px 18px;border:1px solid rgba(255,255,255,.06)}
+    .stat .num{font-family:Poppins;font-size:28px;font-weight:800}
+    .hero-photo{position:relative}
+    .photo{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .badge{position:absolute;bottom:-14px;left:-14px;background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:10px 14px;font-weight:700;display:flex;gap:8px;align-items:center}
+    .badge .dot{width:12px;height:12px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#ffe38c)}
+    @media (max-width:980px){
+      .hero .grid{grid-template-columns:1fr}
+      .title{font-size:38px}
+      .subtitle{max-width:unset}
+      .stats{grid-template-columns:repeat(3, minmax(0,1fr))}
+    }
+
+    /* Sections */
+    section{padding:80px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .section-title{font-family:Poppins;font-size:34px;margin:0 0 12px}
+    .section-sub{color:var(--muted);margin:0 0 24px}
+
+    /* Services */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+    .card h3{font-family:Poppins;margin:0 0 8px;font-size:22px}
+    .badge-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .badge-pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-size:12px}
+    .card .more{margin-top:14px;display:inline-flex;gap:8px;align-items:center;font-weight:700}
+    .card .more svg{transition:transform .2s}
+    .card:hover .more svg{transform:translateX(4px)}
+    @media (max-width:980px){.cards{grid-template-columns:1fr}}
+
+    /* Framework */
+    .framework{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+    .steps{display:grid;gap:12px}
+    .step{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start;background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px}
+    .step .n{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-family:Poppins;font-weight:800;background:linear-gradient(135deg,var(--accent),#ffd166);color:#111}
+    .step p{margin:6px 0 0;color:var(--muted)}
+
+    /* Cases */
+    .logos{display:flex;flex-wrap:wrap;gap:18px;opacity:.9}
+    .logos .logo-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:14px 18px;border-radius:14px}
+
+    /* Testimonials */
+    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px}
+    .quote p{margin:8px 0 0}
+    @media (max-width:980px){.testi{grid-template-columns:1fr}}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact form{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px}
+    .field{display:grid;gap:6px;margin-bottom:14px}
+    .field input,.field textarea{background:#0b0d12;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;color:var(--text);outline:none}
+    .field textarea{min-height:120px;resize:vertical}
+    .contact .card-mini{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px}
+
+    /* Footer */
+    footer{padding:22px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;align-items:center}
+    .social{display:flex;gap:12px}
+    .social a{display:inline-flex;padding:10px;border:1px solid rgba(255,255,255,.14);border-radius:12px}
+
+    /* Decorative puzzle motif */
+    .puzzle{position:absolute;inset:auto -40px -60px auto;transform:rotate(-12deg);opacity:.08;pointer-events:none}
+    .ribbon{background:linear-gradient(135deg,rgba(244,180,0,.18),rgba(88,101,242,.18));border:1px solid rgba(255,255,255,.08);padding:14px;border-radius:16px;display:grid;gap:8px;margin-top:18px}
+    .ribbon strong{font-family:Poppins}
+    .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .gallery .item{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+    .gallery .item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.35));}
+    .gallery img{width:100%;height:100%;object-fit:cover;display:block}
+    @media (max-width:1200px){.gallery{grid-template-columns:repeat(4,1fr)}}
+    @media (max-width:780px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .video-wrap{position:relative;width:100%;max-width:980px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .video-wrap::before{content:"";display:block;padding-top:56.25%}
+    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%}
+    .floating-cta{position:fixed;right:22px;bottom:22px;z-index:60}
+    .floating-cta a{box-shadow:0 12px 30px rgba(0,0,0,.35)}
+</style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="container wrap">
+      <a class="brand" href="#top" aria-label="Monalisa Siciliana">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Monalisa Siciliana</h1>
+      </a>
+      <button class="hamb" aria-label="Abrir menu" onclick="document.querySelector('.menu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="menu" role="navigation">
+        <a href="#sobre">Sobre</a>
+        <a href="#palestras">Palestras</a>
+        <a href="#mentoria">Mentoria</a>
+        <a href="#consultoria">Consultoria</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#contato" class="btn btn-primary">Agende uma conversa</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top" style="position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:url('assets/hero-monalisa.jpg') center/cover no-repeat;filter:grayscale(10%);opacity:.28"></div>
+    <div class="container grid" style="position:relative;z-index:1">
+      <div>
+        <div class="kicker">Transformando Processos em <strong>Lucro</strong></div>
+        <h2 class="title">A solução para organizar, escalar e lucrar — com processos que funcionam todos os dias</h2>
+        <p class="subtitle">Monalisa Siciliana ajuda empresas a <strong>reduzir custos</strong>, <strong>ganhar eficiência</strong> e <strong>aumentar margem</strong> com gestão por processos, KPIs/OKRs e governança financeira de alto nível.</p>
+        <ul class="subtitle" style="margin:14px 0 0; padding-left:18px">
+          <li>✅ Diagnóstico 360º e plano de ação em até 15 dias</li>
+          <li>✅ Rotina de performance com KPIs que o time realmente usa</li>
+          <li>✅ Implementação assistida para resultado visível em 90 dias</li>
+        </ul>
+        <div class="cta">
+          <a href="#contato" class="btn btn-primary">Quero falar com a Monalisa</a>
+          <a href="#palestras" class="btn btn-ghost">Ver soluções</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="num">20+ anos</div><div class="txt">em controladoria e processos</div></div>
+          <div class="stat"><div class="num">+6 setores</div><div class="txt">indústria, varejo, farma, auto, construção e tech</div></div>
+          <div class="stat"><div class="num">Execução</div><div class="txt">método próprio e accountability</div></div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo"><img src="assets/monalisa-impact.jpg" alt="Monalisa Siciliana — foto impactante" /></div>
+        <div class="badge"><span class="dot"></span> Agenda aberta para keynotes e projetos</div>
+        <svg class="puzzle" width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="20" width="60" height="60" rx="12" fill="#e63946"/>
+          <rect x="90" y="20" width="60" height="60" rx="12" fill="#5865f2"/>
+          <rect x="20" y="90" width="60" height="60" rx="12" fill="#3ecf8e"/>
+          <rect x="90" y="90" width="60" height="60" rx="12" fill="#f4b400"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre a Monalisa</h2>
+      <p class="section-sub">Executiva C-Level com trajetória em gestão estratégica e tática, conduzindo controladoria, finanças, RH, TI, jurídico e suprimentos em empresas de médio e grande porte. Experiência com implantação de processos, modelagem, KPIs/OKRs, relatórios gerenciais e rituais de performance. Perfil generalista, visão sistêmica e foco em resultados sustentáveis.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Especialidades</h3>
+          <p>Gestão por processos (BPM), controladoria, orçamentação, governança, eficiência operacional, gestão ágil aplicada ao negócio, transformação digital e BI.</p>
+          <div class="badge-list">
+            <span class="badge-pill">BPM</span>
+            <span class="badge-pill">KPIs & OKRs</span>
+            <span class="badge-pill">Controladoria</span>
+            <span class="badge-pill">Orçamento</span>
+            <span class="badge-pill">BI & Dashboards</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>ERPs & Ferramentas</h3>
+          <p>TOTVS | SAP | Protheus | Sienge | Fortes | Linx | Top Manager | Mais Controle | Power BI.</p>
+        </div>
+        <div class="card">
+          <h3>Segmentos</h3>
+          <p>Indústria alimentícia e farmacêutica, varejo, automotivo, construção civil e tecnologia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PALESTRAS -->
+  <section id="palestras">
+    <div class="container">
+      <h2 class="section-title">Palestras</h2>
+      <p class="section-sub">Conteúdo prático, linguagem clara e cases do mundo real para eventos corporativos e convenções de líderes.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Processos que Viram Lucro</h3>
+          <p>Como desenhar e implantar processos enxutos que reduzem desperdícios, aumentam a produtividade e elevam a margem.</p>
+          <div class="badge-list"><span class="badge-pill">BPM</span><span class="badge-pill">Lean</span><span class="badge-pill">ROI</span></div>
+          <div class="more">Saiba mais
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Governança Financeira de Alta Performance</h3>
+          <p>Da previsão ao fechamento: controles, rituais e indicadores que blindam o caixa e aceleram decisões.</p>
+          <div class="badge-list"><span class="badge-pill">Controladoria</span><span class="badge-pill">Budget</span><span class="badge-pill">CF</span></div>
+        </div>
+        <div class="card">
+          <h3>Agilidade na Gestão</h3>
+          <p>Práticas ágeis aplicadas ao negócio para times de finanças e operação entregarem mais valor, com disciplina e cadência.</p>
+          <div class="badge-list"><span class="badge-pill">Agile</span><span class="badge-pill">OKRs</span><span class="badge-pill">Rituais</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTORIA -->
+  <section id="mentoria">
+    <div class="container">
+      <h2 class="section-title">Mentoria</h2>
+      <p class="section-sub">Acompanhamento próximo para acelerar líderes e times na execução da estratégia.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Executive 1:1</h3>
+          <p>Mentoria personalizada para CEOs, CFOs e diretores que precisam estruturar a governança, priorizar projetos e criar tração.</p>
+          <div class="badge-list"><span class="badge-pill">Plano 90 dias</span><span class="badge-pill">KPIs críticos</span><span class="badge-pill">Rotina de performance</span></div>
+        </div>
+        <div class="card">
+          <h3>Times de Gestão</h3>
+          <p>Formação de líderes e analistas para ganhos rápidos em processos, produtividade, indicadores e tomada de decisão.</p>
+          <div class="badge-list"><span class="badge-pill">Workshops</span><span class="badge-pill">On the job</span><span class="badge-pill">Playbooks</span></div>
+        </div>
+        <div class="card">
+          <h3>Implementação Assistida</h3>
+          <p>Mentoria + mão na massa com sprints focadas em um objetivo: orçamento, dashboard, rituais, revisão de processos, etc.</p>
+          <div class="badge-list"><span class="badge-pill">Sprints</span><span class="badge-pill">Resultados</span><span class="badge-pill">Accountability</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTORIA -->
+  <section id="consultoria">
+    <div class="container">
+      <h2 class="section-title">Consultoria Empresarial</h2>
+      <p class="section-sub">Projetos com começo, meio e fim. Foco em ROI e transferência de conhecimento.</p>
+      <div class="framework">
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div><strong>Diagnóstico 360º</strong><p>Mapeamento de processos, maturidade de gestão, indicadores e alavancas financeiras.</p></div></div>
+          <div class="step"><div class="n">2</div><div><strong>Plano de Ação</strong><p>Roadmap priorizado com metas, responsáveis e cronograma em sprints.</p></div></div>
+          <div class="step"><div class="n">3</div><div><strong>Implantação</strong><p>Desenho de processos, OKRs/KPIs, orçamentação, rituais e dashboards de gestão.</p></div></div>
+          <div class="step"><div class="n">4</div><div><strong>Trilha de Capacitação</strong><p>Treinamentos práticos para autonomia do time e governança de longo prazo.</p></div></div>
+          <div class="step"><div class="n">5</div><div><strong>Resultados & Sustentação</strong><p>Rotina de performance, auditorias leves e melhoria contínua.</p></div></div>
+        </div>
+        <div class="card">
+          <h3>Frentes de Atuação</h3>
+          <ul>
+            <li>Modelagem e padronização de processos (BPM).</li>
+            <li>Implantação de KPIs/OKRs e rituais de gestão.</li>
+            <li>Controladoria e governança financeira (budget, forecast, DRE, caixa).</li>
+            <li>Eficiência operacional e redução de custos.</li>
+            <li>Data & BI para tomada de decisão.</li>
+            <li>PMO e gestão de portfólio.</li>
+          </ul>
+          <div class="badge-list" style="margin-top:12px">
+            <span class="badge-pill">TOTVS</span><span class="badge-pill">SAP/Protheus</span><span class="badge-pill">Power BI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDOS / E-BOOK -->
+  <section id="conteudos">
+    <div class="container">
+      <h2 class="section-title">Conteúdos</h2>
+      <p class="section-sub">Aprenda com quem entrega resultado: artigos, guias e o e-book <em>Transformando Processos em Lucro</em>.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>E-book: Transformando Processos em Lucro</h3>
+          <p>Metodologias práticas para organizar a casa, ganhar eficiência e crescer de forma sustentável.</p>
+          <a class="btn btn-primary" href="#" onclick="alert('Disponível em breve — vamos publicar seu link de venda/landing aqui.');return false;">Quero garantir o meu</a>
+        </div>
+        <div class="card">
+          <h3>LinkedIn</h3>
+          <p>Siga a Monalisa para conteúdos e atualizações.</p>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/monalisa-siciliana/" target="_blank" rel="noopener">Visitar perfil</a>
+        </div>
+        <div class="card">
+          <h3>Artigos & Materiais</h3>
+          <p>Biblioteca com modelos de KPIs, checklists de processos e playbooks de gestão.</p>
+          <a class="btn btn-ghost" href="#" onclick="alert('Área de materiais — podemos integrar a um blog ou CMS.');return false;">Ver materiais</a>
+        </div>
+      </div>
+      <div class="ribbon"><strong>Gatilho de autoridade:</strong> Monalisa já estruturou áreas e rituais de performance em empresas de médio e grande porte, com implantação real de KPIs, orçamento e governança financeira.</div>
+    </div>
+  </section>
+
+  <!-- GALERIA DE FOTOS -->
+  <section id="galeria">
+    <div class="container">
+      <h2 class="section-title">Em ação</h2>
+      <p class="section-sub">Registros de palestras, mentorias e bastidores de projetos (substitua pelas fotos oficiais).</p>
+      <div class="gallery">
+        <div class="item"><img src="assets/galeria1.jpg" alt="Palestra Monalisa 1"></div>
+        <div class="item"><img src="assets/galeria2.jpg" alt="Palestra Monalisa 2"></div>
+        <div class="item"><img src="assets/galeria3.jpg" alt="Mentoria em equipe"></div>
+        <div class="item"><img src="assets/galeria4.jpg" alt="Evento corporativo"></div>
+        <div class="item"><img src="assets/galeria5.jpg" alt="Workshop"></div>
+        <div class="item"><img src="assets/galeria6.jpg" alt="Keynote"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VÍDEOS -->
+  <section id="videos">
+    <div class="container">
+      <h2 class="section-title">Vídeos</h2>
+      <p class="section-sub">Trechos de palestras, convites e cases (adicione links do YouTube/Vimeo).</p>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo Monalisa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="cta" style="margin-top:14px">
+        <a href="#contato" class="btn btn-primary">Quero esse conteúdo no meu evento</a>
+        <a href="#palestras" class="btn btn-ghost">Ver pautas de palestras</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER DE OFERTA -->
+  <section id="oferta">
+    <div class="container">
+      <div class="card" style="display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center">
+        <div>
+          <h2 class="section-title" style="margin:0">Leve a Monalisa para acelerar seus resultados</h2>
+          <p class="section-sub" style="margin:8px 0 14px">Keynotes para liderança, workshops práticos e consultoria para implementar processos que viram lucro.</p>
+          <div class="badge-list"><span class="badge-pill">Autoridade</span><span class="badge-pill">Prova social</span><span class="badge-pill">ROI</span></div>
+          <div class="cta" style="margin-top:12px"><a class="btn btn-primary" href="#contato">Agendar reunião</a><a class="btn btn-ghost" href="#mentoria">Conhecer mentorias</a></div>
+        </div>
+        <div><img src="assets/monalisa-stage.jpg" alt="Monalisa no palco" style="border-radius:16px;border:1px solid rgba(255,255,255,.08)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS / LOGOS (placeholders) -->
+  <section id="cases">
+    <div class="container">
+      <h2 class="section-title">Resultados & Confiança</h2>
+      <p class="section-sub">Inclua aqui depoimentos e logotipos de empresas/segmentos onde atuou (com autorização).</p>
+      <div class="testi">
+        <div class="quote"><strong>“Implementamos uma rotina de performance com KPIs claros e o EBITDA respondeu em 90 dias.”</strong><p>— Diretor Financeiro (Indústria)</p></div>
+        <div class="quote"><strong>“A revisão de processos reduziu o lead time em 32% e eliminou retrabalho entre áreas.”</strong><p>— COO (Tecnologia)</p></div>
+        <div class="quote"><strong>“O orçamento e forecast ficaram previsíveis e a gestão do caixa ficou muito mais segura.”</strong><p>— CEO (Varejo)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title">Agende uma conversa</h2>
+      <p class="section-sub">Conte brevemente o seu cenário e receba um retorno rápido para marcarmos uma reunião.</p>
+      <div class="contact">
+        <form onsubmit="sendMailto(event)">
+          <div class="field"><label for="nome">Seu nome</label><input id="nome" required placeholder="Seu nome"/></div>
+          <div class="field"><label for="email">Seu e-mail</label><input id="email" type="email" required placeholder="voce@empresa.com"/></div>
+          <div class="field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva brevemente seu desafio"></textarea></div>
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+        <div class="card-mini">
+          <h3>Contato direto</h3>
+          <p>E-mail: <a href="mailto:contato@monalisasiciliana.com">contato@monalisasiciliana.com</a></p>
+          <p>WhatsApp: <a href="https://wa.me/5585000000000" target="_blank" rel="noopener">(85) 00000-0000</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/monalisa-siciliana/" target="_blank" rel="noopener">/monalisa-siciliana</a></p>
+          <div style="margin-top:14px">
+            <!-- Substitua assets/qr-linkedin.png pelo QR do LinkedIn -->
+            <img src="assets/qr-linkedin.png" alt="QR code do LinkedIn da Monalisa" style="width:180px;border-radius:12px;border:1px solid rgba(255,255,255,.1)"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© <span id="y"></span> Monalisa Siciliana. Todos os direitos reservados.</div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/monalisa-siciliana/" target="_blank" aria-label="LinkedIn" rel="noopener">🔗</a>
+        <a href="#top" aria-label="Topo">⬆️</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA WhatsApp -->
+  <div class="floating-cta">
+    <a class="btn btn-primary" href="https://wa.me/5585000000000" target="_blank" rel="noopener">Fale com a Monalisa</a>
+  </div>
+
+  <!-- JSON-LD Schema.org (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Monalisa Siciliana",
+    "jobTitle": "Palestrante, Mentora e Consultora",
+    "sameAs": [
+      "https://www.linkedin.com/in/monalisa-siciliana/"
+    ],
+    "knowsAbout": ["Gestão por Processos","Controladoria","KPIs","OKRs","Eficiência Operacional","Business Intelligence"],
+    "worksFor": {"@type":"Organization","name":"Monalisa Siciliana Consultoria"}
+  }
+  </script>
+
+  <script>
+    // Ano dinâmico
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Envio simples via mailto
+    function sendMailto(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('mensagem').value.trim();
+      const subject = encodeURIComponent(`[SITE] Contato de ${nome}`);
+      const body = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${msg}`);
+      window.location.href = `mailto:contato@monalisasiciliana.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<!-- Conteúdo atualizado do site -->
